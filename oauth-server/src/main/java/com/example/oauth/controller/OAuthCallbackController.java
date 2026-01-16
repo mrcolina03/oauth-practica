@@ -1,4 +1,4 @@
-package com.example.author.controller;
+package com.example.oauth.controller;
 
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
