@@ -1,0 +1,106 @@
+{
+	"info": {
+		"name": "Author MS CRUD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Obtener todos los autores",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/authors",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "8081",
+					"path": ["api", "authors"]
+				}
+			}
+		},
+		{
+			"name": "Obtener autor por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/authors/1",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "8081",
+					"path": ["api", "authors", "1"]
+				}
+			}
+		},
+		{
+			"name": "Crear nuevo autor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Gabriel García Márquez\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/authors",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "8081",
+					"path": ["api", "authors"]
+				}
+			}
+		},
+		{
+			"name": "Actualizar autor",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Gabo - Actualizado\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/authors/1",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "8081",
+					"path": ["api", "authors", "1"]
+				}
+			}
+		},
+		{
+			"name": "Eliminar autor",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/authors/1",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "8081",
+					"path": ["api", "authors", "1"]
+				}
+			}
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJraWQiOiJiODRjNmVlYy0zOWQ4LTRlNzItOTY5YS05NDM5OGZmMDE5MWIiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwiYXVkIjoib2lkYy1jbGllbnQiLCJuYmYiOjE3Njg4NjE4OTAsInNjb3BlIjpbIm9wZW5pZCIsInByb2ZpbGUiXSwiaXNzIjoiaHR0cDovLzEyNy4wLjAuMTo5MDAwIiwiZXhwIjoxNzY4ODYyMTkwLCJpYXQiOjE3Njg4NjE4OTAsImp0aSI6IjgxNDA0YTdkLTA2OTgtNGU0Zi1hZTllLTA0YjZiMDA5NGIwZCJ9.NqtMZhzlsVKGzTvi1ynUk8EnZOOpQ15lvY8GpXSz5-IJT5uuANaX6Lu53bm3Io2sSYG6Si4XA4qVQBrhiOjyK1Cxz_hk9aWLUnpwiKMp7Md3s8c55_HM-k_F57RGK-4zvQ2XUbjQraWA7WsLeuYk1dkDRvLajV4RqQQZAQ1IOnaEEkPPJRVYZi4oRKHcl3dTHZ_eQQAMYNhV7Muw9GPa9_B_FgedYleB1mW0lsLOvfUbkTtdir1be5uxPNokb1dghrmwMOlol8ekCnMaIbDe3Hgax5d26WZT2aQeKu4Kf0LgaORp9YWLUARm8LhtKul8FEL6LuqfiXRXSWaICNeVjg",
+				"type": "string"
+			}
+		]
+	}
+}
