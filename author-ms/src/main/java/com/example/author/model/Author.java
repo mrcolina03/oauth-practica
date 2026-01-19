@@ -1,26 +1,16 @@
 package com.example.author.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "authors")
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class Author {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @Column(nullable = false)
     private String name;
-
-    @Column(nullable = false)
-    private String nationality;
-
-    private String biography;
+    // Getters y Setters
+    public Author() {}
+    public Author(String name) { this.name = name; }
+    public Long getId() { return id; }
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
 }

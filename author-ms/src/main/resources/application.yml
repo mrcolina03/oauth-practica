@@ -2,32 +2,26 @@ server:
   port: 8081
 
 spring:
-  application:
-    name: author-service
-
   datasource:
-    url: jdbc:h2:mem:authorsdb
-    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:authordb
+    driverClassName: org.h2.Driver
     username: sa
     password:
-
-  jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
-    hibernate:
-      ddl-auto: create-drop
-    show-sql: true
-
   h2:
     console:
       enabled: true
-      path: /h2-console
 
   security:
     oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: http://localhost:9000
-
-logging:
-  level:
-    org.springframework.security: DEBUG
+      client:
+        registration:
+          oidc-client:
+            client-id: oidc-client
+            client-secret: secret
+            scope: openid,profile
+            authorization-grant-type: authorization_code
+            # Esta URI debe coincidir EXACTAMENTE con la del servidor
+            redirect-uri: "http://localhost:8081/login/oauth2/code/oidc-client"
+        provider:
+          oidc-client:
+            issuer-uri: http://127.0.0.1:9000
