@@ -16,7 +16,11 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .anyRequest().authenticated()
                 )
-                .oauth2Login(Customizer.withDefaults()); // Esto habilita la redirección al Login
+                // Mantiene la capacidad de loguearse por navegador para obtener el token
+                .oauth2Login(Customizer.withDefaults())
+                // Habilita la validación de tokens JWT enviados desde Postman
+                .oauth2ResourceServer(oauth2 -> oauth2.jwt(Customizer.withDefaults()));
+
         return http.build();
     }
 }

@@ -13,6 +13,12 @@ spring:
 
   security:
     oauth2:
+      # CONFIGURACIÓN PARA VALIDAR TOKENS (POSTMAN)
+      resourceserver:
+        jwt:
+          issuer-uri: http://127.0.0.1:9000
+
+      # CONFIGURACIÓN PARA EL LOGIN POR NAVEGADOR
       client:
         registration:
           oidc-client:
@@ -20,7 +26,6 @@ spring:
             client-secret: secret
             scope: openid,profile
             authorization-grant-type: authorization_code
-            # Esta URI debe coincidir EXACTAMENTE con la del servidor
             redirect-uri: "http://localhost:8081/login/oauth2/code/oidc-client"
         provider:
           oidc-client:

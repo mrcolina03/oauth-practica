@@ -20,6 +20,7 @@ public class AuthorController {
     @GetMapping("/authorized")
     public Map<String, String> getAuthorizedToken(
             @RegisteredOAuth2AuthorizedClient("oidc-client") OAuth2AuthorizedClient authorizedClient) {
+        // Esto extraerá el token de acceso JWT generado por el servidor de autorización
         return Map.of("token", authorizedClient.getAccessToken().getTokenValue());
     }
 
